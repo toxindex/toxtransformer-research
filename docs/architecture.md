@@ -65,4 +65,4 @@ Several inherited configuration fields are not active switches in the current fo
 
 ## Checkpoint format
 
-A checkpoint directory contains `multitask_encoder.pt` and two JSON tokenizer files under `spvt_tokenizer/`. The tensor file stores the state dictionary, architecture configuration, model version, parameter counts, and metadata. The research loader uses `weights_only=True` and strict state-dictionary matching. Missing or unexpected parameters produce an error instead of silently leaving parts of the model uninitialized.
+A checkpoint directory contains `multitask_encoder.pt` and two JSON tokenizer files under `spvt_tokenizer/`. The released inference bundle also includes `properties.json`, which maps model indices to source property identifiers and available titles. The tensor file stores the state dictionary, architecture configuration, model version, parameter counts, and metadata. The research loader uses `weights_only=True` and strict state-dictionary matching. Missing or unexpected parameters produce an error instead of silently leaving parts of the model uninitialized.

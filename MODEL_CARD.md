@@ -6,19 +6,19 @@ Study molecular property prediction, conditioning on observed assay results, and
 
 ## Architecture and inspected artifact
 
-The inspected upstream checkpoint contains a causal transformer with 16 layers, hidden width 512, 8 heads, and 59,218,946 parameters. Its property vocabulary has 6,647 entries and its output classes are binary. `artifacts/upstream-checkpoint.json` identifies the inspected files by SHA-256. Weights are not bundled and no public download has been configured.
+The released upstream checkpoint contains a causal transformer with 16 layers, hidden width 512, 8 heads, and 59,218,946 parameters. Its property vocabulary has 6,647 entries and its output classes are binary. `artifacts/upstream-checkpoint.json` identifies all bundle files by SHA-256. Weights are distributed through Git LFS under `models/toxtransformer/`, together with tokenizers and the complete property-index catalog. No activity records are bundled.
 
 The new training workflow uses the same architecture implementation but a separately documented optimization and data protocol. A model trained with `configs/research.json` is a new experiment, not a reproduced historical model by default.
 
 ## Training data evidence
 
-Historical preprocessing code reads ChemHarmony through BioBricks and constructs binary property observations. The exact immutable dataset snapshot and all transformations used for the inspected weights remain unverified. The original property mapping must accompany the checkpoint; integer indices cannot be interpreted without it.
+Historical preprocessing code reads ChemHarmony through BioBricks and constructs binary property observations. The exact immutable dataset snapshot and all transformations used for the inspected weights remain unverified. The bundled catalog preserves the original property mapping; endpoint definitions and binary-label thresholds require the original data sources.
 
 The bundled toy data has artificial labels such as presence of oxygen in a simple SMILES string. It is not measured biological activity and must not be used to report toxicological performance.
 
 ## Evaluation evidence
 
-Verified software properties include strict checkpoint loading, finite forward/backward passes, save/load prediction equality, causal exclusion of target/future labels, and repeatable small CPU training runs. These checks do not validate prediction accuracy on a scientific benchmark.
+Verified software properties include strict checkpoint loading, recorded CPU inference examples, finite forward/backward passes, save/load prediction equality, causal exclusion of target/future labels, and repeatable small CPU training runs. The pretrained inference helper matches the upstream single-molecule convention with no padding gap before property queries. These checks do not validate prediction accuracy on a scientific benchmark.
 
 The reference evaluator reports per-property and pooled metrics, class counts, macro AUC coverage, and the amount of observed context. No historical benchmark score is asserted here. Evidence from observation-level splits, novel-compound splits, scaffold splits, and full-data training monitors must be distinguished.
 
@@ -33,4 +33,4 @@ The reference evaluator reports per-property and pooled metrics, class counts, m
 
 ## Release status
 
-Code is available under the included MIT license. Training data, pretrained artifact distribution, exact historical run provenance, and scientific benchmark validation remain separate release work.
+Code and released weights are available under the included MIT license. Property metadata retains source attribution. Training data, exact historical run provenance, and scientific benchmark validation remain separate release work.

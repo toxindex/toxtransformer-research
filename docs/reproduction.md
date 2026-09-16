@@ -38,11 +38,12 @@ The CUDA commands have not been executed in this repository's CPU validation. Pi
 
 ## Load the inspected upstream checkpoint
 
-Obtain the three files listed in `artifacts/upstream-checkpoint.json` from the maintainers. No public download URL is currently configured. Place them in an ignored local directory:
+Run `git lfs pull` to download the weights. The complete inference bundle is versioned with the repository:
 
 ```text
-assets/upstream/
+models/toxtransformer/
   multitask_encoder.pt
+  properties.json
   spvt_tokenizer/
     selfies_property_val_tokenizer.json
     selfies_tokenizer.json
@@ -52,18 +53,18 @@ Verify hashes, load every parameter strictly, and inspect the architecture:
 
 ```bash
 uv run --locked python -m toxtransformer_research.checkpoint \
-  --checkpoint assets/upstream --manifest artifacts/upstream-checkpoint.json
+  --checkpoint models/toxtransformer --manifest artifacts/upstream-checkpoint.json
 ```
 
 Run one structure-only prediction by zero-based property index:
 
 ```bash
 uv run --locked python -m toxtransformer_research.checkpoint \
-  --checkpoint assets/upstream --manifest artifacts/upstream-checkpoint.json \
+  --checkpoint models/toxtransformer --manifest artifacts/upstream-checkpoint.json \
   --smiles CCO --property-index 0
 ```
 
-An index alone does not identify a toxicological endpoint. Interpreting the result requires the matching property/assay mapping. The local loader was tested against this stored checkpoint; its equivalence to every currently deployed service image has not been established.
+`properties.json` maps each index to its source identifier and available title. Endpoint definitions and label thresholds still require the original data sources. The local loader was tested against this stored checkpoint; its equivalence to every currently deployed service image has not been established. The [local reproduction guide](local-reproduction.md) explains the unpadded upstream inference convention and provides a single numerical verification command.
 
 ## Historical training recipe
 
@@ -75,10 +76,8 @@ The full-data trainer uses the V3 architecture, custom property sampling, gradie
 
 The following items are not yet established as a single verified release:
 
-1. A distributable checkpoint bundle with a stable URL and distribution terms. A checksum manifest is already included.
-2. The exact property mapping, endpoint definitions, and tokenizer associated with that checkpoint.
-3. Immutable training, validation, and benchmark data snapshots, including the augmented activities and final tensors.
-4. The specific source revision, effective optimizer/sampler/scheduler settings, seeds, and environment that produced the inspected weights. Recovered historical code is evidence, but does not prove that association.
-5. Benchmark predictions and evaluation commands tied to those artifacts, with explicit split and context definitions.
+1. Immutable training, validation, and benchmark data snapshots, including the augmented activities and final tensors, with endpoint definitions and label thresholds.
+2. The specific source revision, effective optimizer/sampler/scheduler settings, seeds, and environment that produced the inspected weights. Recovered historical code is evidence, but does not prove that association.
+3. Benchmark predictions and evaluation commands tied to those artifacts, with explicit split and context definitions.
 
-The independent research workflow can be reproduced now. Exact retraining of the historical weights and benchmark scores remains unverified until those artifacts and their lineage are supplied.
+The weights, tokenizer, property-index mapping, and numerical inference examples are now distributed in this repository. The independent research workflow can also be reproduced. Exact retraining of the historical weights and benchmark scores remains unverified until the remaining artifacts and their lineage are supplied.

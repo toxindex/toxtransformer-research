@@ -2,8 +2,7 @@
 """
 PYTHONPATH=./ spark-submit --master local[240] --driver-memory 512g \
 --conf spark.eventLog.enabled=true --conf spark.eventLog.dir=file:///data/tmp/spark-events \
---conf spark.local.dir=/data/tmp/spark-local code/2_3_build_tensordataset.py; \
-./slackmsg 'Build tensordataset finished'
+--conf spark.local.dir=/data/tmp/spark-local code/2_3_build_tensordataset.py
 """
 
 import uuid, torch, torch.nn.utils.rnn

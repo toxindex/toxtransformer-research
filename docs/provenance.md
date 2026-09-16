@@ -22,6 +22,14 @@ The embedding, attention, decoder, classifier, and state-dictionary parameter na
 
 `src/toxtransformer_research/`, the runnable configurations, artificial fixture, and tests are new. They provide an explicit research baseline and do not claim to recreate the historical training procedure. The workflow fits vocabularies on training data, checks canonical compound overlap, rejects invalid labels and silent truncation, records run provenance, and evaluates structure-only and observed-context predictions separately.
 
+## Distributed checkpoint and catalog
+
+The Git LFS checkpoint is byte-identical to the inspected upstream weights; its original SHA-256 is retained in the artifact manifest. The state dictionary contains tensors only and the checkpoint metadata is empty. The tokenizer's stored file path was changed from a training-directory path to the portable filename `selfies_tokenizer.json`; its vocabulary indices are unchanged. The second tokenizer file is byte-identical to upstream.
+
+`models/toxtransformer/properties.json` contains only property index, stable identifier, available descriptive title, and original source name from the database used by upstream inference. Its indices cover the checkpoint vocabulary exactly. No raw assay metadata, measured activity rows, compound histories, deployment identifiers, or credentials are included. The catalog contains 1,670 missing titles, preserved as `null`.
+
+The release adds an unpadded pretrained inference helper and numerical regression examples. This corrects the initial research example's padding gap to match upstream single-molecule inference. The configurable fixed-length representation in the separate from-scratch trainer remains unchanged.
+
 ## Historical reference files
 
 Historical preprocessing, training, and evaluation files retain their original imports and operational assumptions. They are not imported by the installed package. They may require omitted legacy modules, Spark, tensor datasets, and a distributed GPU environment. Their purpose is to preserve scientific implementation evidence for reconstructing the original pipeline. The original commands are not presented as supported reproduction instructions.

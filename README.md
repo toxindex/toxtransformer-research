@@ -11,19 +11,41 @@ This is a research derivative of [toxindex/toxtransformer](https://github.com/to
 | Study the architecture used by an inspected upstream checkpoint | Included; strict checkpoint loading verified |
 | Train, save, evaluate, and query a small model locally | Tested on CPU with the included artificial dataset |
 | Repeat the small run with the same seed and environment | Tested; learned tensors and epoch metrics match exactly |
-| Load the inspected 6,647-property checkpoint | Loader and artifact checksums included; weights must be obtained separately |
-| Recreate the deployed weights or historical benchmark results from scratch | Not yet verified; training snapshots, mappings, splits, and run provenance remain to be released |
+| Load the inspected 6,647-property checkpoint | Weights in Git LFS; tokenizers, property mapping, checksums, and numerical reproduction examples included |
+| Recreate the deployed weights or historical benchmark results from scratch | Not yet verified; training snapshots, label definitions, splits, and run provenance remain to be released |
 
-The inspected checkpoint has **59,218,946 parameters**, 16 causal transformer layers, hidden width 512, 8 attention heads, and 6,647 property embeddings. These dimensions come from the checkpoint. They are not inferred from an advertised model name. See [architecture](docs/architecture.md) and [artifact checksums](artifacts/upstream-checkpoint.json).
+The released checkpoint has **59,218,946 parameters**, 16 causal transformer layers, hidden width 512, 8 attention heads, and 6,647 property embeddings. These dimensions come from the checkpoint. See [architecture](docs/architecture.md) and [artifact checksums](artifacts/upstream-checkpoint.json).
+
+## Reproduce pretrained predictions locally
+
+Install [Git LFS](https://git-lfs.com/) and [uv](https://docs.astral.sh/uv/getting-started/installation/). The tested setup is Linux, Python 3.11, and CPU PyTorch. The weights download is approximately 237 MB; allow additional space for the Python environment.
+
+```bash
+git lfs install
+git clone https://github.com/toxindex/toxtransformer-research.git
+cd toxtransformer-research
+git lfs pull
+uv sync --locked --extra dev --python 3.11
+
+# Verify every artifact and reproduce four recorded CPU predictions.
+uv run --locked python -m toxtransformer_research.reproduce
+
+# Predict a property locally; output includes its identifier, source, and title.
+uv run --locked python -m toxtransformer_research.checkpoint \
+  --manifest artifacts/upstream-checkpoint.json --smiles CCO --property-index 0
+
+# Find indices by source, identifier, or available title.
+uv run --locked python -m toxtransformer_research.checkpoint \
+  --list-properties --search tox21
+```
+
+The verification command reports `checksums: passed` and `strict_load: passed`. The structure-only ethanol prediction for property index 0 is approximately `0.08650372` in the tested CPU environment. These examples check numerical reproduction, not scientific accuracy. The [local setup guide](docs/local-reproduction.md) covers Python use, known property context, troubleshooting, and the distinction between inference reproduction and retraining.
 
 ## Run the research workflow
 
-Use Python 3.11 and `uv`. The lockfile selects a CPU build of PyTorch so this example needs no GPU, cloud account, or service credentials.
+After the setup above, the reference workflow can train a small model from scratch. The lockfile selects a CPU build of PyTorch; no GPU, cloud account, or service credentials are required.
 
 ```bash
-git clone https://github.com/toxindex/toxtransformer-research.git
-cd toxtransformer-research
-uv sync --locked --extra dev --python 3.11
 uv run --locked pytest -q
 
 uv run --locked toxtransformer train \
@@ -47,6 +69,7 @@ For new data, provide a CSV with `smiles,property_id,value,split` columns. Value
 | `src/cvae/multitask_encoder.py` | Causal attention, embeddings, RMSNorm, SwiGLU, rotary positions, span masking, and checkpoint I/O |
 | `src/cvae/tokenizer/` | SELFIES vocabulary and property/value tokenizer formats |
 | `src/toxtransformer_research/` | Dataset validation, deterministic training, evaluation, prediction, and checkpoint inspection |
+| `models/toxtransformer/` | Git LFS weights, portable tokenizers, and the 6,647-entry property mapping |
 | `configs/upstream-architecture.json` | Architecture configuration read from the inspected checkpoint |
 | `configs/research.json` | Starting configuration for new experiments; it is not the historical training recipe |
 | `reference/` | Historical preprocessing, sampling, optimization, evaluation, and optional CUDA code |
@@ -56,4 +79,4 @@ Start with [architecture](docs/architecture.md), then [reproduction](docs/reprod
 
 ## License and artifacts
 
-Code retains the upstream [MIT license](LICENSE). No production credentials, deployed prediction cache, historical training dataset, or pretrained weights are committed here. Dataset and weight distribution terms must be supplied with their eventual releases; the code license alone does not document those terms.
+Code and the released model weights use the [MIT license](LICENSE). The property catalog preserves upstream property identifiers, descriptive titles where available, and source attribution. No measured activity records, production credentials, prediction cache, or historical training dataset are included. Consult the original data sources for endpoint definitions and source-specific data terms.

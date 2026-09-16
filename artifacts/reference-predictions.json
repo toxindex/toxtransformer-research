@@ -1,0 +1,44 @@
+{
+  "purpose": "Numerical regression examples, not an accuracy benchmark. The contextual example uses artificial observed labels solely to test the code path.",
+  "device": "cpu",
+  "dtype": "float32",
+  "torch": "2.8.0+cpu",
+  "selfies_padding": "none",
+  "absolute_tolerance": 1e-05,
+  "cases": [
+    {
+      "name": "ethanol-structure-only",
+      "smiles": "CCO",
+      "property_index": 0,
+      "probability": 0.08650372177362442
+    },
+    {
+      "name": "aspirin-structure-only",
+      "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+      "property_index": 1872,
+      "probability": 0.4423421323299408
+    },
+    {
+      "name": "caffeine-structure-only",
+      "smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+      "property_index": 6646,
+      "probability": 0.07986588031053543
+    },
+    {
+      "name": "ethanol-artificial-context",
+      "smiles": "CCO",
+      "property_index": 0,
+      "context": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "probability": 0.12827487289905548
+    }
+  ]
+}

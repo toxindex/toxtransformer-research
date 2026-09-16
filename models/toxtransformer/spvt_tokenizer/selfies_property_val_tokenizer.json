@@ -1,0 +1,8 @@
+{
+  "selfies_tokenizer": "selfies_tokenizer.json",
+  "num_assays": 6647,
+  "num_vals": 2,
+  "selfies_offset": 2481,
+  "SEP_IDX": 9130,
+  "END_IDX": 9131
+}
