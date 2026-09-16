@@ -1,0 +1,26 @@
+{
+  "description": "Stored upstream checkpoint inspected during research extraction; no public download is configured.",
+  "download_url": null,
+  "distribution_status": "Weights and tokenizers are not included in this repository. Obtain these exact files from the maintainers.",
+  "model_version": "2.1",
+  "parameters": 59218946,
+  "properties": 6647,
+  "selfies_vocabulary_size": 2481,
+  "files": [
+    {
+      "path": "multitask_encoder.pt",
+      "bytes": 236925619,
+      "sha256": "8cae8b6490635e760a4dc00a66fb2626d8b3b8c1fba97fb7e0daee2935deeb1b"
+    },
+    {
+      "path": "spvt_tokenizer/selfies_property_val_tokenizer.json",
+      "bytes": 209,
+      "sha256": "8a381238ad5862f1b04095ab76a59f8251fa2e913e711ae9ed22b2700f9affde"
+    },
+    {
+      "path": "spvt_tokenizer/selfies_tokenizer.json",
+      "bytes": 85504,
+      "sha256": "232ae9453c5bce87b5bc7e792749b6fb84198e6eaa2397fdad0099a3f9c99211"
+    }
+  ]
+}

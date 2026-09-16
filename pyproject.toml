@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toxtransformer-research"
+version = "0.1.0"
+description = "ToxTransformer architecture and reproducible research workflows"
+requires-python = ">=3.11,<3.13"
+license = "MIT"
+dependencies = [
+  "torch==2.8.0",
+  "numpy==2.2.6",
+  "selfies==2.1.1",
+  "rdkit==2025.3.6",
+  "scikit-learn==1.7.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "ruff==0.13.0"]
+
+[project.scripts]
+toxtransformer = "toxtransformer_research.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+extend-exclude = ["reference", "src/cvae"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

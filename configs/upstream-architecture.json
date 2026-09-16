@@ -1,0 +1,22 @@
+{
+  "hdim": 512,
+  "nhead": 8,
+  "num_layers": 16,
+  "ff_mult": 3,
+  "dropout_rate": 0.2,
+  "attention_dropout": 0.1,
+  "output_size": null,
+  "use_gradient_checkpointing": false,
+  "intermediate_dim": null,
+  "activation": "swiglu",
+  "layer_norm_eps": 1e-05,
+  "layer_dropout": 0.1,
+  "use_flash_attention": true,
+  "use_rms_norm": true,
+  "use_rotary_embeddings": true,
+  "rope_theta": 10000.0,
+  "max_seq_len": 4096,
+  "span_masking_rate": 0.15,
+  "mean_span_length": 3.0,
+  "use_span_masking": true
+}

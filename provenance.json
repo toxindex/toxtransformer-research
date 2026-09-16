@@ -1,0 +1,251 @@
+{
+  "upstream": "https://github.com/toxindex/toxtransformer",
+  "commit": "bdd340eb4d69a913f251504d55f9d2aca5b29c40",
+  "history": "Independent root commit; no upstream Git objects or other branches copied.",
+  "files": [
+    {
+      "upstream_path": "LICENSE",
+      "research_path": "LICENSE",
+      "upstream_sha256": "9bf0685da2df5fc1e39efd8d69ab863689376badf3346c8484626f9c08c9e9ea"
+    },
+    {
+      "upstream_path": "cvae/multitask_encoder.py",
+      "research_path": "src/cvae/multitask_encoder.py",
+      "upstream_sha256": "0a514cc4f6f054dc6e514c3941d6f5e82fabb81a785ed8c12d4c760440ee7cda"
+    },
+    {
+      "upstream_path": "cvae/tokenizer/selfies_property_val_tokenizer.py",
+      "research_path": "src/cvae/tokenizer/selfies_property_val_tokenizer.py",
+      "upstream_sha256": "a3863c276f0eb11c2c26c2be6d72b750ca6f49ebc566155fdfd84055ecd12fde"
+    },
+    {
+      "upstream_path": "cvae/tokenizer/selfies_tokenizer.py",
+      "research_path": "src/cvae/tokenizer/selfies_tokenizer.py",
+      "upstream_sha256": "49d1953dab707fac445b00548ce0867757b782a0e43b20f1d4d7a60573cff81d"
+    },
+    {
+      "upstream_path": "csrc/tensor_builder.cu",
+      "research_path": "reference/cuda/tensor_builder.cu",
+      "upstream_sha256": "95994ba715aeae4381f309e79565ba7ad6a45cfaf946c6013ad24d8d7c1e2faa"
+    },
+    {
+      "upstream_path": "setup_cpp.py",
+      "research_path": "reference/cuda/setup_cpp.py",
+      "upstream_sha256": "7342084ed2345fd6051d72ceb648aa82442d184095565f176a2cdc0d608c5d0f"
+    },
+    {
+      "upstream_path": "code/01_preprocess.py",
+      "research_path": "reference/upstream/01_preprocess.py",
+      "upstream_sha256": "10d3ec1297d4b46930e9b4dd1388d470274149b42e838bd82f551ad67a66c6df"
+    },
+    {
+      "upstream_path": "code/02_preprocess_tokenizer.py",
+      "research_path": "reference/upstream/02_preprocess_tokenizer.py",
+      "upstream_sha256": "7787b5c29aaecd4afe26cc7964d1d58cfeb0a7118b59aad5f82c95416533d920"
+    },
+    {
+      "upstream_path": "code/03_preprocess_activities.py",
+      "research_path": "reference/upstream/03_preprocess_activities.py",
+      "upstream_sha256": "9e7c9e4d21ebd4b7627769ac5b6c3eb9d7c957c54dbb573e919080ed79b89b5d"
+    },
+    {
+      "upstream_path": "code/04_build_sqlite.py",
+      "research_path": "reference/upstream/04_build_sqlite.py",
+      "upstream_sha256": "f51de92698809c76ad8377cbd0e2e98a1682a7693fe98e8ce0579b9ee6dc89ab"
+    },
+    {
+      "upstream_path": "code/05_build_tensordataset.py",
+      "research_path": "reference/upstream/05_build_tensordataset.py",
+      "upstream_sha256": "55ce1425da847dcec4f0313c2e7fe727cc84dac039cdc3a8814659b95ded388c"
+    },
+    {
+      "upstream_path": "code/06_token_information.py",
+      "research_path": "reference/upstream/06_token_information.py",
+      "upstream_sha256": "2e90d6d41e58f3aab0313ff00bb9c582ca965f955eaf78776bf60442ebf74f01"
+    },
+    {
+      "upstream_path": "code/10_generate_evaluations_holdout_nprops1.py",
+      "research_path": "reference/upstream/10_generate_evaluations_holdout_nprops1.py",
+      "upstream_sha256": "6e5c9b684a669239d2f50e5b0902e502a512029735d86467817048acf4fb295d"
+    },
+    {
+      "upstream_path": "code/11_generate_evaluations_holdout_context.py",
+      "research_path": "reference/upstream/11_generate_evaluations_holdout_context.py",
+      "upstream_sha256": "ccd5b372750df7fbb47cfe606159a2ef723bfac582bd00a4919383deb22cc571"
+    },
+    {
+      "upstream_path": "code/3_1_1_train_multitask_transformer_parallel.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/3_1_1_train_multitask_transformer_parallel.py",
+      "upstream_sha256": "21193b45e5326db810e9d6bc341b667f2cde34a901e8236538297eefd986bee5"
+    },
+    {
+      "upstream_path": "code/8_full_train.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/8_full_train.py",
+      "upstream_sha256": "327e801dd130b38a8d03951485c07798c7ddb138cd17dca68c70e122dc7b858c"
+    },
+    {
+      "upstream_path": "code/helper/__init__.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/__init__.py",
+      "upstream_sha256": "dbd16a19d06b77e2b129b1dede590412f311e7b8094955f645febdba516c6ec8"
+    },
+    {
+      "upstream_path": "code/helper/scheduler/warmup_cosine_trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/scheduler/warmup_cosine_trainer.py",
+      "upstream_sha256": "8f12833518db7b7a8b210d584e9b5c1fcc3eb6ca6b92214217ce5f2bddf4fd01"
+    },
+    {
+      "upstream_path": "code/helper/trainer/__init__.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/__init__.py",
+      "upstream_sha256": "7133ae18139e9d81cece97484c9a506ad6473c914307d3a60946b0e213981325"
+    },
+    {
+      "upstream_path": "code/helper/trainer/curriculum_trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/curriculum_trainer.py",
+      "upstream_sha256": "cafd9a3fa13575fc88f609b0a9067712d8512f1d2e5274afbd0c526cc8a0e1f4"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/__init__.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/__init__.py",
+      "upstream_sha256": "02914304f3655cac31cd071639f574f7d4086f5c786278484d11f6056e20b922"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/default_evaluator.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/default_evaluator.py",
+      "upstream_sha256": "aec813992d7dd47024d0e70e28c4f43acb5e6e4ffd51065aedce50eeafbb785b"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/evaluator.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/evaluator.py",
+      "upstream_sha256": "380e19f2dd0ce5d5348e18d2a0ab476914679354c18218a98a968bf88f9ae75e"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/invfreq_evaluator.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/invfreq_evaluator.py",
+      "upstream_sha256": "a84fd5480e18786aecc993b2ca5e6f8ec3898703251646cc11635601d6988ed0"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/stratified_evaluator.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/stratified_evaluator.py",
+      "upstream_sha256": "392dd1d51c2fc9880f1e656a3bf6bb3ee8251ba9db33c0ca997c30bc6e304287"
+    },
+    {
+      "upstream_path": "code/helper/trainer/evaluator/stratified_group_evaluator.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/evaluator/stratified_group_evaluator.py",
+      "upstream_sha256": "e081811f855fd6d88c695bdd93722096853b970e306af5469cdfb5207d4052d2"
+    },
+    {
+      "upstream_path": "code/helper/trainer/invfreq_trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/invfreq_trainer.py",
+      "upstream_sha256": "151385a63ef0b1e379370aa64346c4fdb8cfe4ac0c280714bd2268403999671e"
+    },
+    {
+      "upstream_path": "code/helper/trainer/pairwise_trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/pairwise_trainer.py",
+      "upstream_sha256": "c391a55b754a3bd2aa80b763b8494d25ece8a4d60a8c82d0e99db090e76f6ed7"
+    },
+    {
+      "upstream_path": "code/helper/trainer/selfies_properties_values_trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/selfies_properties_values_trainer.py",
+      "upstream_sha256": "1905613e0be58cf14ebf5ffd9151237c1795abe20f10675bdbf64cc72964daeb"
+    },
+    {
+      "upstream_path": "code/helper/trainer/trainer.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/trainer.py",
+      "upstream_sha256": "d4e846b12d6bd4782724280b3a83453b1b824144c5c67e46f78768596da2c418"
+    },
+    {
+      "upstream_path": "code/helper/trainer/trainer_core.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/trainer/trainer_core.py",
+      "upstream_sha256": "f347b75f1a2bceb0b095f7e635844ec5d48f8b50447672c0c6bd0320fa05094d"
+    },
+    {
+      "upstream_path": "code/helper/utils/__init__.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/utils/__init__.py",
+      "upstream_sha256": "1e1c5b1fdd5321e84c80609a70852aadfe461b83fb930c26a265a4610a83df6e"
+    },
+    {
+      "upstream_path": "code/helper/utils/batch_size_finder.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/code/helper/utils/batch_size_finder.py",
+      "upstream_sha256": "b796a41d9e56ee2566c2ab87971f0997d78046f2cadbeba5dfd82fc728693516"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/__init__.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/__init__.py",
+      "upstream_sha256": "1cd2148ff610c731595186fcaaef7131780b5caebceedd0dd991fbcc2af9b7f9"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/balanced_selfies_properties_values_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/balanced_selfies_properties_values_dataset.py",
+      "upstream_sha256": "a78a7db2d1e31956475d1ef405a1b8bfc0fa15dbacf2b7b7c476fa59a6834f10"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/curriculum_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/curriculum_dataset.py",
+      "upstream_sha256": "2f4f1f80164049c25913f50846341dadbd401ea8c19cc801669fc3392ceb743b"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/custom_sampler.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/custom_sampler.py",
+      "upstream_sha256": "8ff50195359c22ba9fe4a17823cddb1cb3f754e735f5a44c047b97ca3ae88a54"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/dynamic_balanced_selfies_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/dynamic_balanced_selfies_dataset.py",
+      "upstream_sha256": "58ce0cc7a6c084faaef4d5c1b25900a4d18931ebb9c9fc8ea6b18ff9527c520a"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/efficient_property_permutation_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/efficient_property_permutation_dataset.py",
+      "upstream_sha256": "37a1b6ed8a10d7c75e33fb8b97010757a2bc8f0976f58f735ffd0e7648ef2ae7"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/inmemory_selfies_properties_values_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/inmemory_selfies_properties_values_dataset.py",
+      "upstream_sha256": "78fe9e4e0c634304d8d278e458c4411bd0e70def72b50e363f8e069513c38a8d"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/inmemory_target_property_values_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/inmemory_target_property_values_dataset.py",
+      "upstream_sha256": "f4167c40b3b7dbffc33b2948d3749ee1fd218d3b1a3896c7b907bb0664d89bca"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/property_score_sampling.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/property_score_sampling.py",
+      "upstream_sha256": "c14d19c756dcafc85f0c792cfd60c62021b477a844d878a0e3ca101012119142"
+    },
+    {
+      "upstream_path": "cvae/models/datasets/simple_property_mapped_dataset.py",
+      "upstream_commit": "cc51ae0d1c96fc80e3726bf50dfe968c2f97a213",
+      "research_path": "reference/historical_training/cvae/models/datasets/simple_property_mapped_dataset.py",
+      "upstream_sha256": "eeddb9b564f47781b1e3e91ebf787c3a3e98947bef9b963ac7f09e27dbaeefe8"
+    }
+  ]
+}

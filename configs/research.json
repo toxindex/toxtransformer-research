@@ -1,0 +1,24 @@
+{
+  "seed": 42,
+  "epochs": 50,
+  "batch_size": 16,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "max_selfies": 120,
+  "max_properties": 256,
+  "model": {
+    "hdim": 512,
+    "nhead": 8,
+    "num_layers": 16,
+    "ff_mult": 3,
+    "max_seq_len": 4096,
+    "dropout_rate": 0.2,
+    "attention_dropout": 0.1,
+    "layer_dropout": 0.1,
+    "use_span_masking": true,
+    "span_masking_rate": 0.15,
+    "mean_span_length": 3.0,
+    "use_gradient_checkpointing": true
+  }
+}

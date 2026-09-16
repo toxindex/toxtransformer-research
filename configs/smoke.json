@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 4,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "max_selfies": 32,
+  "max_properties": 3,
+  "model": {
+    "hdim": 32,
+    "nhead": 4,
+    "num_layers": 2,
+    "ff_mult": 2,
+    "max_seq_len": 64,
+    "dropout_rate": 0.0,
+    "attention_dropout": 0.0,
+    "layer_dropout": 0.0,
+    "use_span_masking": false
+  }
+}
