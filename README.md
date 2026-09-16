@@ -4,6 +4,8 @@ ToxTransformer predicts binary molecular properties from a SELFIES representatio
 
 This is a research derivative of [toxindex/toxtransformer](https://github.com/toxindex/toxtransformer), with independent Git history. The upstream service, cloud infrastructure, partner-specific analyses, and other model projects are outside this repository.
 
+New readers and integrators: [start here](docs/getting-started.md) for a reading path, prediction meanings, public links, and the distinction between local research and hosted access.
+
 ## What can be reproduced
 
 | Task | Status |
